@@ -1,7 +1,7 @@
 /**
  * 1. Recursively generate each permutation of characters.
  * 2. For every permutation, iterate through each index and move the last character to each position of the permutation.
- * 3. Add each permutation to the Set
+ * 3. Add each permutation to the Set.
  * Time complexity: O(n^2)
  * Space complexity: O(n^n)
  *
