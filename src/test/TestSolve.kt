@@ -1,6 +1,6 @@
 package test
 
-import allPerm
+import getPerms
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.TestInstance
@@ -14,13 +14,13 @@ import java.util.stream.Stream
 class TestSolve {
 
     private fun testCases() = Stream.of(
-            TestCase("abc", setOf("abc", "bac", "bca", "acb", "cab"))
+            TestCase("abc", setOf("abc", "bac", "bca", "acb", "cab", "cba"))
     )
 
     @ParameterizedTest
     @MethodSource("testCases")
     fun `TestParam`(test: TestCase) {
-        printAssert(allPerm(test.input, 0, hashSetOf()), test.expect)
-        Assertions.assertThat(allPerm(test.input, 0, hashSetOf())).isEqualTo(test.expect)
+        printAssert(getPerms(test.input), test.expect)
+        Assertions.assertThat(getPerms(test.input)).isEqualTo(test.expect)
     }
 }
